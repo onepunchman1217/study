@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		document.getElementById('id名')
+		document.getElementsByTagName('标签名')
+		document.getElementsByClassName('class名')
+		TagName标签名和class获取元素是动态的
+		注意：获取时加数字下标就不是动态啦
+		
+		
+		css选择器获取元素
+		querySelector
+		document或者元素限制范围，在该范围内通过css选择器获取一个元素，即使用css选择器应该获取到的是一组元素，也只能获取到第一个，它默认就是第一个，不用谢数字下标；
+		 无论有多少个相同的class名，他获取的都是第一个
+		document.querySelector('css选择器');
+		元素.querySelector('css选择器');
+		var li1 = document.querySelector('#list li')
+		
+		querySelectorAll
+		document或者元素限制范围，在该范围内通过css选择器获取一组元素，类数组，数字下标取值[0],从0开始，length
+		只有一个元素也要加数字下标[0]获取操作元素
+		document.querySelectorAll('css选择器');
+		元素.querySelectorAll('css选择器');
+
+	</body>
+</html>
