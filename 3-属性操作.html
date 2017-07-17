@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<input type="button" value="按钮" id="btn" style="width:100px;height:100px;background: red;left:0;top:1px;"/>
+		<script>
+			/*
+			 	属性操作
+			 		操作的是行间属性，可读可写
+			 		
+			 	.的方法
+			 		不合符小驼峰命名的属性，样式名，需要转成小驼峰
+			 		btn.style.backgroundColor
+			 		
+			 	[]的方法
+			 		css样式名必须加引号；
+			 		变量必须用[]	不要加引号；
+			 		
+			 		
+			 	常用属性操作
+			 		id
+			 		className
+			 		src -- 获取到的是绝对地址
+			 		style（颜色，复合属性，网址不可以）
+			 		innerHTML获取到的是标签对内的所有内容(包括子标签，子标签行间属性),字符串(可以识别标签)
+			 		innerText获取到的是标签对内的所有文本内容(不识别标签)	
+			 * 
+			 * */
+			var btn = document.getElementById('btn');
+			var pos = 'top';
+//			console.log(btn.style.backgroundColor)
+			//background-color不是小驼峰，所以要加中括号；
+			console.log(btn.style['background-color'])
+			console.log(btn.style[pos])
+			
+			
+			box.className = 'blue red';
+			box.style.cssText = 'width:200px;height:200px;background: red;';
+			box.innerHTML = '<p>p</p>'
+			
+			
+		</script>
+	</body>
+</html>
