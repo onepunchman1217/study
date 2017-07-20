@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="box"></div>
+		<script>
+			/*
+			 	转成字符串
+			 		String()
+			 		''+数据     是简便方式，相当于String(数据)；例如console.log(''+n)//简便方法
+			 * 
+			 * */
+			//1.数字
+			var n = 1;
+			console.log(typeof String(n))//生成的是string
+			console.log(1)
+			//2.布尔值
+			var b = true;
+			console.log(String(b))//生成的是布尔值的值,这里是true
+			//3.null
+			var Null = null;
+			console.log(String(Null))//生成null
+			//4.undefined
+			var a;
+			console.log(String(a))//生成undefined
+			//object
+			var arr = [1,2,3];
+			console.log(String(arr))//string之后是组里面的值1，2，3
+			var obj = {
+				name:'小红',
+				age:18
+			}
+			console.log(String(obj))//string之后，键对值里面有几个对象，就生成几个object
+			var box = document.getElementById('box');
+			console.log(String(box))//生成object
+			console.log(''+n)//简便方法，字符串1
+		</script>
+	</body>
+</html>

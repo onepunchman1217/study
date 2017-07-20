@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="box"></div>
+		<script>
+			/*
+			 	ECMAScript的数据类型：-->	String,Number,Boolean,Undefined,Object,Null
+			 		
+			 	typeof弹出来的数据类型-->	string,number,boolean,undefined,object,function
+			 	null是object	
+			 	
+			 	String   对应弹      string   
+			 	Number   对应弹      number 
+			 	Boolean  对应弹      boolean 
+			 	Undefined对应弹      undefined 
+			 	Object   对应弹      object 
+			 	Null     对应弹      object ！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！
+			 	
+			 	注意：function特殊，不属于任何一种函数，他typeof弹出来的就是function
+			 	注意：Null弹的是object！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！
+			 	
+			 	typeof 操作符
+			 	检测数据类型
+			 	返回值，字符串类型，首字母小写
+			 	
+			 	
+			 	
+			 * 
+			 * */
+			var str = '';
+			console.log(typeof str)
+			var n = 1;
+			console.log(typeof n)
+			var b = true;
+			console.log(typeof b)
+			var Null = null;
+			console.log(typeof Null)
+			var a;
+			console.log(typeof a)
+			var arr = [];
+			console.log(typeof arr)
+			var obj = {};
+			console.log(typeof obj)
+			var box = document.getElementById('box');
+			console.log(typeof box)
+			var fn = function(){}
+			console.log(typeof fn)
+		</script>
+	</body>
+</html>
