@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script>
+			/*
+			 * 字符串转成数字
+			 * 忽略第一位非数字后的所有字符
+			 * 忽略前后空格，
+			 * 忽略前边的0
+			 * 转不成就是NaN	
+			 * 空字符串转成NaN，注意：这里的空字符串、空数组，null就转变成NaN了，在number里是转化成0！！！！！！，其实parseInt/parseFloat非数即NaN,空数组也会变成NaN
+			 	parseInt
+			 		转成整数
+			 	parseFloat
+			 * 		保留小数
+			 * */ 
+			var n = '10 12235';
+			console.log(parseInt(n))//10
+			var n1 = '    00001255ps      ';
+			console.log(parseInt(n1))//1255
+			var n4 = '    0000.1255ps      ';
+			console.log(parseInt(n4))//0
+			var n2 = '';
+			console.log(parseInt(n2))//nan
+			var n3 = '1244.93n55px';
+			console.log(parseInt(n3))//1244
+			console.log(parseFloat(n3))//1244.93
+			var arr = [];
+			console.log(parseInt(arr))//NaN
+		</script>
+	</body>
+</html>
