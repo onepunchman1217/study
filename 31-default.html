@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script>
+			/*
+			 	switch条件判断,判断要求必须是===全相等的条件才可以传进来；
+			 	注意不加break，穿透性
+			 	
+			 	如果因为case 1符合n=1，所以执行，因为没有break兜着，所以即使第二个条件case 2不符合，他也会执行，
+			 	只要通过某个条件进来了，就会执行到break截止为止；
+			 * */
+			var n = 1;
+			switch(n){
+				case 1:
+					alert(1)
+				
+				case 2:
+					alert(2)
+				break;
+				default:
+					alert('都不满足')
+				break;
+			}
+		</script>
+	</body>
+</html>
