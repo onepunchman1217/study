@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script>
+			/*
+			 	break
+			 		终止本次循环的后续代码执行，并跳出循环
+			 * */
+			for(var i=0;i<10;i++){
+				console.log(i)//这里可以执行到6，到下一步进行if判断的时候，下一步无法继续；
+				if(i>5){
+					break;
+				}
+				//console.log(i)
+			}
+		</script>
+	</body>
+</html>
