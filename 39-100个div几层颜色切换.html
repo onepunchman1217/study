@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script>
+			var arr = ['red','yellow','blue','green'];
+			var str = '';
+			var n = 0;
+			for(var i=0;i<25;i++){
+				str += '<div style="width:50px;height:50px;position:absolute;left:'+i%5*60+'px;top:'+Math.floor(i/5)*60+'px;background:'+arr[0]+';"></div>'
+			}
+			document.body.innerHTML = str;
+			var divs = document.getElementsByTagName('div');
+			for(var i=0;i<divs.length;i++){
+				divs[i].onOff = false;
+				divs[i].onmouseover = function(){
+					var m = 0;
+					//第一步
+					for(var i=0;i<divs.length;i++){
+						if(divs[i].onOff){
+							m++;//24
+						}
+					}
+					//第二步
+					if(m == 0){
+						for(var i=0;i<divs.length;i++){
+							divs[i].onOff = true;
+						}
+						n++;//1
+					}
+					//第三步
+					if(this.onOff){
+						this.onOff = false;
+						this.style.background = arr[n%arr.length];
+					}
+				}
+			}
+			/*
+			 首先m=0的，开关是false的，所以第一步的m++无法进行，进入第二部，所有div开关都打开了是true了，这时n++是1了，进入第三步，开关是true了，触摸第一个div这个div变成了false关，并且变颜色；
+			 然后进行下一遍循环，m还是等于0，开关有24个是true只有一个刚刚触摸过的是false；还是先执行第一步的for循环，因为有24个是真的，m++可以加到24；这时候m不等于0了，所以进行第三步骤；这时候出触摸的第二个也变成了false颜色也改变；依次循环，到了最后一个div变颜色了；
+			 最后一个div变颜色后，这时候m++等于1；开关全都变成了关；鼠标移出，再次进入的时候，m还是从=0开始；并且开关都是false进入不了第一步的m++了；所以执行第二步；就和最开始时候写的步骤一样了；
+			 * */
+		</script>
+	</body>
+</html>
