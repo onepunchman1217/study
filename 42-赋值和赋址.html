@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script>
+			//简单数据类型是赋值
+			var a = 1;
+			var b = a;
+			b = 2;
+			console.log(a,b)//在这里a和b打印后a是1，b是2；因为在这里b先等于a是1，之后又给b赋值是2，覆盖了1，所以b是2
+			
+			
+			//对象是赋址
+			var j = {
+				a:1
+			}
+			var j2 = j;
+			j2.a = 2;
+			console.log(j,j2)//在这里j和j2的a都是2，在这里改变了j2的a的值，因为是同一个地址a，所以上面j的a也被改变了；如果想同一地址改变互不影响，那就要用后面的for in
+			
+			var arr = [1,2,3];
+			var arr1 = arr;
+			arr1[0] = 4;
+			arr1[3] = 5
+			console.log(arr)//这里是4、2、3、5
+		</script>
+	</body>
+</html>
