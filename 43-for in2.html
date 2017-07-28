@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			var j1 = {
+				a:1,
+				b:2,
+				c:3
+			}
+			var j2 = {};
+			//这里的key可以写成任何字符串，自己编就行；
+			//for循环复制j1里面的key这个变量
+			//因为key是变量所以不能写成j2.key要写成j2[key];
+			//key是变量；
+			for(var key in j1){
+				j2[key] = j1[key];
+			}
+			//这时候j2复制了j1里面的所有元素，所以j2里面就也有有了这些东西，这些东西分别属于j1和j2，也就是说我有abc你也有abc，
+			//现在更改j2的a变为4，只是改的是j2的不影响j1；所以j2等于423，j1等于123；
+			j2.a = 4;
+			console.log(j2,j1);
+			
+			
+		</script>
+	</body>
+</html>
