@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script>
+			/*
+			 	局部作用域
+			 		在函数内声明的变量和函数，只能在该函数内使用，如果外部想用，return出去
+			 * 
+			 * */
+			function fn(){
+				//函数内声明的变量
+				var a = 1;
+				//函数内声明的函数
+				function fn1(){
+					alert(a);
+					
+				}
+				return [a,fn1]
+			}
+	
+			//console.log(a)//报错，全局不能访问局部变量
+			//fn1();//报错，全局不能访问局部函数
+			console.log(fn()[1]())//这行的意思就是打印fn里return后的内容a和fn1的第1位fn1的return，因为fn1的return是undefined，所以是undefined；
+		</script>
+	</body>
+</html>
