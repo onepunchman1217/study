@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script>
+			/*
+			 	局部作用域
+			 		在函数内声明的变量和函数，只能在该函数内使用，如果外部想用，return出去
+			 * 
+			 * */
+			function fn(){
+				//函数内声明的变量
+				var a = 1;
+				//函数内声明的函数
+				function fn1(){
+					var b = 2;
+					alert(2)
+					function fn3(){
+						alert(3)
+					}
+					return fn3
+				}
+				//console.log(a)//该函数内部可以访问
+				//fn1();//该函数内部可以访问
+				function fn2(){
+					console.log(a)//1
+					console.log(fn1()())
+				}
+				fn2();
+			}
+			fn();
+			/*
+			 1、script里只有function
+			 2、然后fn()被调用了；
+			 3、然后开始解析function fn()，域解析，里面有var a、fn1、fn2；
+			 4、开始执行，a=1；fn1没被调用，跳过，执行fn2被执行；
+			 5、fn2里console.log(a)这时候a=1；console.log(fn1()())这时候fn1被调用；先看fn1();
+			 6、开始执行fn1()，域解析b=2，弹alert(2)、function fn3；return fn3了;fn3里面是alert(3);因为fn3被return这时候alert(3);
+			 7、这时候再看fn1()();fn1()是return的后面的东西也就是fn3；fn1()()就是fn3()，fn3()的return是默认值undefined；
+			 * */
+		</script>
+	</body>
+</html>
