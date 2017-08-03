@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script>
+			/*
+			 	作用域链
+			 		变量和函数的查找原则
+			 		函数内部 -> 形参 -> 外部
+			 * */
+			var a = 1;
+			function fn(a){
+				//var a = 2;
+				
+				function fn1(){
+					console.log(a)
+				}
+				fn1();
+				function fn3(a){}
+			}
+			fn()
+			/*
+			 1、fn被调用，开始执行fn里面
+			 2、fn里面有fn1和fn3，因为fn1被调用了，开始执行fn1
+			 3、console.log(a)从里往外找，找到了fn(a),这里的a是undefined,因为没有实参，所以console.log(a)是undefined
+			 4、如果fn()里面没有a的话，那么fn1里面的a就会找到外部的var的a=1，这时候打印出来的就是1
+			 * */
+		</script>
+	</body>
+</html>
