@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script>
+			//1题
+//			function A(){
+//				//a = undefined；
+//				alert(a);
+//				//a=10
+//				var a=10;
+//				//window.a=undefined;
+//				/*
+//				 注意：！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！
+//				 因为现在全局没有声明a，如果在全局console.log(a)的话就是报错；
+//				 但如果是window.a就是undefined;
+//				 * */
+//				alert(this.a);
+//			}
+//			//调用A()
+//			A();
+			
+			
+			
+			
+			//2题
+/*			//a = undefined
+			//fn = function
+			var a = 100;
+			//a=100;
+			//fn = function;
+			function fn(){ 
+				//a、b、c=undefined
+				//b=2*undefined
+				var b = 2 * a; 
+				//b=NaN
+				var a = 200; 
+				//a=200
+				//c=200/2
+				var c = a / 2;  
+				alert(b);//NaN    
+				alert(c);//100    
+			}    
+			fn()*/
+
+			//3题
+/*			//a=function  被调用开始执行
+			function a(b){
+				//b=function
+				console.log(b);
+				function b(){
+					//从里往外，外面有一个预解析的b=function，所以这里的b=function；
+					console.log(b);
+				}
+				b();
+			}
+			//a被调用并且实参是1
+			a(1);*/
+
+
+
+			//4题
+			/*//a= function  调用执行
+			function a(b){
+				//alert(b)先从函数内部找，找不到var和function，找到形参b，形参b传参1，所以b=1
+				//alert(b);
+				//b赋值了b=function
+				//b()函数被调用，
+				b=function (){
+					//b赋值了b=function
+					alert(b);
+				}
+				b();
+			}
+			//a被调用并且实参是1
+			a(1);*/
+
+			//5题
+			//a=undefined
+			//c = function
+			//fn = function
+//			 1、fn被调用，执行fn
+//			 2、fn里a=4、c被调用，找到外面的function c，不吧function c带入到fn里面，而是直接在外面执行，function c里的a从里往外找找到全局的a=3，所以弹窗3
+			 /*var a=3;
+			 function c(){
+			    alert(a);
+			 }
+			 function fn(){
+			  var a=4;
+			  c();
+			 }
+			 fn();*/
+
+			//6题
+			/*//a=undefined
+			//c = function
+			//fn = function
+			var a=3;
+			 function c(a){
+			    alert(a);
+			 }
+			 //调用fn执行fn
+			 function fn(){
+			  var a=4;
+			  //a=4
+			  //从上到下执行,a=4了，所以下面c(a)里的a是4；
+			  c(a);
+			 };
+			 fn();*/
+			
+			//7题
+			/*//b = undefined(123行var b=...)
+			//a = function(130行function a(){alert(1))
+			
+			alert(a)//a=function a(){alert(1)}
+			alert(b)//b=undefined
+			//b = undefined
+			var b = function(){alert(a)};
+			//因为上一排b已经赋值了是b = function(){alert(a)}
+			alert(b)//function(){alert(a)}
+			//a=1
+			var a = 1;
+			//调用执行function b，b = function(){alert(a)}，a=1，所以function(){alert(1)};调用后弹窗1；
+			b();
+			alert(a);//a=1
+			//a=12
+			var a = 12;
+			alert(a);//a=12
+			function a(){alert(1)};
+			//因为现在a=12,12()是报错，后面的就都不执行了；
+			a();
+			alert(a);*/
+
+	//8题	
+	/*//a =fucntion
+	//b=function
+	function a(){
+		return function(){
+			alert(1);
+		}
+	}
+	//a =fucntion a(){return function...}
+	alert(a);
+	//调用函数a执行到里面没有被弹窗的；
+	a();
+	function b(a,b){
+		a = 20;
+		return function(){
+			b = 10;
+			a = 20;
+			alert(a+b);
+		}
+	}
+	//预解析里b=function b(a,b){...            }
+	alert(b);
+	//b()执行b里面的函数，弹return后面的
+	alert(b());
+	//b()里面的函数的return后面的函数及这个函数里面的内容；
+	b()();
+	//给b的(a,b)赋值，不影响里面return后面function内的a和b；先去函数内部的变量；
+	b(9,11)();
+	//a =fucntion a(){return function...}
+	alert(a);*/
+			
+			//9题
+			/*//a = undefined
+			//a = function  覆盖了前面a = undefined
+			alert(a) ;
+			//a= undefined
+			var a = function(){alert(1)};
+			//这时候a=function(){alert(1)};，调用这个函数，弹窗1
+			a();//1
+			alert(a) //function(){alert(1)};
+			
+			function a(a,b){
+				alert(1);
+				a = 10;
+				return function(b){
+					a = 1
+					alert(a);
+				}
+			}
+			alert(a());//a= function(){alert(1)};a()是调用它里面的函数，弹窗1；alert(a())的意思是return a的返回值，a的返回值是undefined；*/
+
+
+			//10题
+			/*//a=undefined;
+			var a = 10;	
+			function fn(){
+				//相当于var a=20；
+				//b=20；b是全局的，因为前面没有var；
+				var a = b = 20;
+				//window下的a=10；
+				alert(this.a)
+				//b=20
+				alert(this.b)
+			}
+			fn();*/
+
+
+			//11题
+			//name = peter
+			var name = 'peter';
+			function fn(){
+				//name=undefined
+				var name;
+				//先从函数内部找，name=undefined，所以执行第一个if；
+				if(name == undefined){
+					console.log('你好'+name)
+				}else{
+					name = 'jack';
+					console.log('你好'+name)
+				}
+			}
+			fn();
+				
+				
+			//随机生成0-100之间的整数	
+			//console.log(Math.round(Math.random()*100))
+		</script>
+	</body>
+</html>
