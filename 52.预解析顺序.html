@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			function fn(a){
+				//1、var a;
+				//这时候先执行从左到右
+				//a=1
+				//2、要把函数提到内部变量的最上面；然后从上至下解析，
+				//a=function
+				console.log(a)//a=function
+				//a=2
+				var a = 2;
+				function a(){
+					
+				}
+				//a=3
+				var a = 3;
+			}
+			fn(1);
+			//1先执行创建变量，把形参、变量、函数、全都提出来；如果名字相同，忽略后面的，只保留一个；
+			
+		</script>
+	</body>
+</html>
