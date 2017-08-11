@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script>
+			var a = 1;
+			window.a = 2;
+			delete a
+			console.log(a)
+			//在这里a是删不掉的
+			//原因：先var a了这个a删不掉，2、window a=2，相当于给a重新赋值a=2而已，所以删不掉
+		</script>
+	</body>
+</html>
