@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script>
+			/*
+			 	生命周期
+			 		变量存储的时间
+			 * */
+			function fn(){
+				var a = 1;
+				a++;
+				console.log(a)
+			}
+			fn()//2
+			fn()//2
+			//因为fn在外面被被调用一次时候不会释放内存，但是如果第二次在外面被调用，就会释放内存，所以fn还是2
+		</script>
+	</body>
+</html>

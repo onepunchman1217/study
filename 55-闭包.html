@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script>
+			/*
+			 	闭包
+			 		函数套函数声明,函数内部形成闭包环境
+			 * */
+			function fn(){
+				var a = 1;
+				function fn1(){
+					a++;
+					console.log(a)
+				}
+				return fn1;
+			}
+			var f = fn();
+			//因为a=1 所以a++=2 再加就等于3；return fn1第一次就是2第二次就是3的逻辑。
+			//现在从上到下执行，在f()时fn还没有被直接调用，所以f()是2，再次的话就是3
+			f();//2
+			f();//3
+			//现在fn被直接调用，fn()()的意思就是fn里面的function被打印了；
+			fn()();//2
+			
+			
+
+			
+		</script>
+	</body>
+</html>
