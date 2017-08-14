@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script>
+			//时间定时器在执行的时候会排在队列的后面可能；
+			setTimeout(function(){
+				alert(1)
+			},0)
+			alert(2);
+		</script>
+	</body>
+</html>
