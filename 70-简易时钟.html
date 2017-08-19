@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<img src="images/0.jpg" alt="" />
+		<img src="images/0.jpg" alt="" />
+		<img src="images/c.jpg" alt="" />
+		<img src="images/0.jpg" alt="" />
+		<img src="images/0.jpg" alt="" />
+		<img src="images/c.jpg" alt="" />
+		<img src="images/0.jpg" alt="" />
+		<img src="images/0.jpg" alt="" />
+		<script>
+			/*
+			 	str[0]
+			 	str.charAt(0)
+			 	字符串第几位是什么字符
+			 * 
+			 * */
+			
+			var imgs = document.getElementsByTagName('img');
+			setInterval(function(){
+				var str = '';
+				//时间戳
+				var date = new Date();
+				var h = date.getHours();
+				var m = date.getMinutes();
+				var s = date.getSeconds();
+				//因为设置的是1000毫秒变一次，然后上面不断的重新获取时，分，秒，所以str里面的内容不断的在变
+				str = two(h)+':'+two(m)+':'+two(s);//00:00:01
+				//console.log(str);
+				//这里循环获取8个图片的src	
+				for(var i=0;i<imgs.length;i++){
+					//因为第二位和第五位是冒号，所以跳过；
+					if(i==2||i==5){
+						continue;
+					}
+					//str = 10:39:10
+					//当i=0时，也就是第一张图，同时也是str[0]就是str的第一位也就是时的第一位
+					//例如：i=7，也就是第八章图片='images/'+str[7]+'.jpg';第八张图获取的是（0开始的因为）str第8位也就是最后一位的数值；
+					imgs[i].src = 'images/'+str[i]+'.jpg';
+				}
+			},1000)
+			
+			function two(n){
+				return n<10?'0'+n:''+n;
+			}
+		</script>
+	</body>
+</html>
