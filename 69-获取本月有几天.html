@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script>
+			/*
+			 	要获取本月有多少天，把月设置成下一月，日设置成0,就会跳转到本月的最后一天，看下是几号就知道了
+			 	步骤首先设置本月的第一天，然后设置下个月，切记月的计数是从0开始，所以3的意思是4月，设置好4月后，然后设置第0天，也就是上一个月的最后一天，这时候就得出了上个月有多少天了；
+			 * */
+			var date = new Date();
+			date.setDate(1);
+			console.log(date.getDate())
+			date.setMonth(3);
+			console.log(date.getMonth())
+			date.setDate(0);
+			//获取一个空的date.getDate()就得出了这个月有多少天了；
+			console.log(date.getDate())
+		</script>
+	</body>
+</html>
