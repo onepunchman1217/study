@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script>
+			/*
+			string.substr(start,[length]),string
+			 	作用：
+			 		截取指定范围内的字符
+			 		从指定范围内的第1位开始，截取几个字符；
+			 *  参数：
+			 * 		start:开始位置，number
+			 		[length]:个数,number,默认截取到最后一位
+			 	注意：
+			 		1.不传参返回整个字符串
+			 		2.截取不到返回空字符串
+			 		3.-1是最后一位
+			 * */
+			var str = 'miaov';
+			console.log(str.substr())//miaov
+			console.log(str.substr(1))//iaov
+			console.log(str.substr(1,2))//ia，从第1位i开始截取2位ia
+			console.log(str.substr(-1,1))//v从最后一位开始截取1位；
+			console.log(str.substr(-10,1))//m负数过大，默认从0开始
+			console.log(str.substr(10,1))//空
+		</script>
+	</body>
+</html>
