@@ -1,0 +1,48 @@
+<!DOCTYPE html>  
+<html>  
+<head>  
+<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />  
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />  
+<title>Hello, World</title>  
+<style type="text/css">  
+html{height:100%}  
+body{height:100%;margin:0px;padding:0px}  
+#container{height:100%}
+</style>  
+<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=E1Y9CWsR2ITDvM7rB8UTfc4wGAuROPCs">
+</script>
+</head>  
+ 
+<body>  
+	<!--
+		信息窗口在地图上方的浮动显示HTML内容。信息窗口可直接在地图上的任意位置打开，也可以在标注对象上打开（此时信息窗口的坐标与标注的坐标一致）。 您可以使用InfoWindow来创建一个信息窗实例，注意同一时刻地图上只能有一个信息窗口处于打开状态。
+	-->
+	<div id="container"></div> 
+	<script type="text/javascript"> 
+//		var map = new BMap.Map("container");    
+//		var point = new BMap.Point(116.404, 39.915);    
+//		map.centerAndZoom(point, 15);
+//		map.addControl(new BMap.NavigationControl());
+//		map.addControl(new BMap.ScaleControl());
+//		map.addControl(new BMap.OverviewMapControl());
+//		map.addControl(new BMap.MapTypeControl());
+//		map.setCurrentCity("北京");
+		
+		
+		var map = new BMap.Map("container");  
+		var ppp = new BMap.Point(116.404, 39.925);
+		var point = new BMap.Point(116.404, 39.915);    
+		map.centerAndZoom(ppp, 15);  // 编写自定义函数，创建标注   
+
+		
+		var opts = {    
+		width : 250,     // 信息窗口宽度    
+		height: 100,     // 信息窗口高度    
+		title : "Hello"  // 信息窗口标题   
+		}    
+		var infoWindow = new BMap.InfoWindow("World", opts);  // 创建信息窗口对象    
+		map.openInfoWindow(infoWindow, map.getCenter());      // 打开信息窗口
+		
+	</script>  
+</body>  
+</html>
