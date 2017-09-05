@@ -1,0 +1,54 @@
+<!DOCTYPE html>  
+<html>  
+<head>  
+<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />  
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />  
+<title>Hello, World</title>  
+<style type="text/css">  
+html{height:100%}  
+body{height:100%;margin:0px;padding:0px}  
+#container{height:100%}
+</style>  
+<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=E1Y9CWsR2ITDvM7rB8UTfc4wGAuROPCs">
+</script>
+</head>  
+ 
+<body>  
+	<!--
+		Polyline表示地图上的折线覆盖物。它包含一组点，并将这些点连接起来形成折线。
+		添加折线
+		折线在地图上绘制为一系列直线段。可以自定义这些线段的颜色、粗细和透明度。颜色可以是十六进制数字形式（比如：#ff0000）或者是颜色关键字（比如：red）。
+		Polyline的绘制需要浏览器支持矢量绘制功能。在Internet Explorer中，地图使用VML绘制折线；在其他浏览器中使用SVG或者Canvas
+		以下代码段会在两点之间创建6像素宽的蓝色折线：
+		//!!!!!!!!!!!!!需要注意的是，无论几个点，线都是从第一个点出发到另外几个点的直线
+	-->
+	<div id="container"></div> 
+	<script type="text/javascript"> 
+//		var map = new BMap.Map("container");    
+//		var point = new BMap.Point(116.404, 39.915);    
+//		map.centerAndZoom(point, 15);
+//		map.addControl(new BMap.NavigationControl());
+//		map.addControl(new BMap.ScaleControl());
+//		map.addControl(new BMap.OverviewMapControl());
+//		map.addControl(new BMap.MapTypeControl());
+//		map.setCurrentCity("北京");
+		
+		
+		var map = new BMap.Map("container");  
+		var ppp = new BMap.Point(116.404, 39.925);
+		var point = new BMap.Point(116.404, 39.915);    
+		map.centerAndZoom(ppp, 15);  // 编写自定义函数，创建标注   
+
+		//!!!!!!!!!!!!!需要注意的是，无论几个点，线都是从第一个点出发到另外几个点的直线
+		var polyline = new BMap.Polyline([    
+		   new BMap.Point(116.399, 39.910),    
+		   new BMap.Point(116.405, 39.920),
+		   new BMap.Point(116.395, 39.910)
+		 ],    
+		 {strokeColor:"blue", strokeWeight:6, strokeOpacity:0.5}    
+		);    
+		map.addOverlay(polyline);
+		
+	</script>  
+</body>  
+</html>
