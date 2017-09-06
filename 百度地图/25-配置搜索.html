@@ -1,0 +1,30 @@
+<!DOCTYPE html>  
+<html>  
+<head>  
+<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />  
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />  
+<title>Hello, World</title>  
+<style type="text/css">  
+html{height:100%}  
+body{height:100%;margin:0px;padding:0px}  
+#container{height:100%}
+</style>  
+<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=E1Y9CWsR2ITDvM7rB8UTfc4wGAuROPCs">
+</script>
+</head>  
+ 
+<body>  
+	<!--
+		BMap.LocalSearch提供本地搜索服务，在使用本地搜索时需要为其设置一个检索区域，检索区域可以是BMap.Map对象、BMap.Point对象或者是省市名称（比如："北京市"）的字符串。BMap.LocalSearch构造函数的第二个参数是可选的，您可以在其中指定结果的呈现。BMap.RenderOptions类提供了若干控制呈现的属性，其中map指定了结果所展现的地图实例，panel指定了结果列表的容器元素。
+	-->
+	<div id="container"></div> 
+	<script type="text/javascript"> 
+		//BMap.LocalSearch提供了若干配置方法，通过它们可以自定义搜索服务的行为以满足您的需求。 在下面的示例中，我们调整每页显示8个结果，并且根据结果点位置自动调整地图视野，不显示第一条结果的信息窗口：
+		var map = new BMap.Map("container");    
+		map.centerAndZoom(new BMap.Point(116.404, 39.915), 14);  
+		var local = new BMap.LocalSearch("北京市",   
+		            {renderOptions: {map: map,autoViewport: true},pageCapacity: 8});      
+		local.search("中关村");
+	</script>  
+</body>  
+</html>
