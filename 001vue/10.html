@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				padding: 0;
+				margin: 0;
+			}
+			.completed label{
+				text-decoration: line-through;
+			}
+			
+		</style>
+	</head>
+	<body>
+			
+		<div class="main">
+			<!--
+				input里面可以用
+				v-on:keyup="addTodo"
+				v-on:keyup.enter="addTodo"
+				v-on:keyup.键值="addTodo"
+				如果addTodo
+			-->
+			<input 
+				type="text" 
+				name="" 
+				id="" 
+				value="" 
+				v-model="todo"
+				v-on:keyup.enter="addTodo"
+			/>
+			<li v-show="lis.length">
+				<a href="">全部任务</a>
+				<a href="">未完成任务</a>
+				<a href="">已完成任务</a>
+			</li>
+			<!--<div class="no-task-tip" v-show="lis.length">还没有添加任何任务</div>-->
+			<!--lis可以取反！lis-->
+			<div class="no-task-tip" v-show="!lis.length">还没有添加任何任务</div>
+			<ul class="todolist">
+				<li class="todo" :class="{completed:item.isChecked}" v-for="item in lis">
+					<input type="checkbox" v-model="item.isChecked" value="" />
+					<label @dblclick="edtorTodo(item)">{{item.title}}</label>
+					<button class="destory" @click="deleteTodo(item)">X</button>
+				</li>
+			</ul>
+		</div>
+		<script type="text/javascript" src="vue.js"></script>
+		<script type="text/javascript">
+			var list = [
+				{
+					title:"玩玩玩",
+					isChecked:false//未选
+				},
+				{
+					title:"吃吃吃",
+					isChecked:true//选中
+				}
+			];
+			
+			new Vue({
+				el:".main",
+				data:{
+					lis:list,
+					todo:""
+				},
+				methods:{
+					//如果addTodo要传参的话，第一个参数，是数据data，第二个参数ev必须传参是$event
+					addTodo(ev){//添加任务
+						//向list中添加一项任务
+						
+						//时间处理函数中的this指向的是当前这个根实例
+//						if(ev.keyCode === 13){
+//							this.lis.push({
+//								title:ev.target.value
+//							});
+//						}或者下面的这种方法,但是v-on里面会有改变
+						console.log(ev)
+						this.lis.push({
+							title:this.todo,
+							inChecked:false
+						});	
+						//添加完数据之后，让顶部输入的input变为空
+						this.todo = '';
+					},
+					deleteTodo(todo){
+						var index = this.lis.indexOf(todo);
+						this.lis.splice(index,1)
+					},
+					edtorTodo(todo){
+						
+					}
+				}
+			})
+		</script>
+	</body>
+</html>

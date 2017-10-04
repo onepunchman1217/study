@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div class="abc"></div>
+		<script src="jquery-3.2.1.js"></script>
+		<script type="text/javascript">
+			//jq获取的是永远对象，因此网页上即使没有此元素，也不会报错
+			if($('.xxxxxx')){
+				console.log(1)
+			}
+			//这样是不会报错的，1会照常弹出
+			
+			//要根据获取到的元素长度来判断
+			if($('.abc').length > 0){
+				console.log(2)
+			}
+			//或者转换成DOM对象来判断
+			if($('.abc')[0]){
+				console.log(3)
+			}
+		</script>
+	</body>
+</html>

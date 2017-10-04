@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				padding: 0;
+				margin: 0;
+			}
+		</style>
+	</head>
+	<body>
+			
+		<div class="main">
+			<!--
+				input里面可以用
+				v-on:keyup="addTodo"
+				v-on:keyup.enter="addTodo"
+				v-on:keyup.键值="addTodo"
+			-->
+			<input 
+				type="text" 
+				name="" 
+				id="" 
+				value="" 
+				v-model="todo"
+				v-on:keyup.enter="addTodo"
+			/>
+			
+			<ul class="todolist">
+				<li class="todo" v-for="item in lis">
+					<input type="" name="" id="" value="" />
+					<label for="">{{item.title}}</label>
+					
+				</li>
+			</ul>
+		</div>
+		<script type="text/javascript" src="vue.js"></script>
+		<script type="text/javascript">
+			var list = [
+//				{
+//					title:"玩玩玩"
+//				},
+//				{
+//					title:"吃吃吃"
+//				},
+			];
+			
+			new Vue({
+				el:".main",
+				data:{
+					lis:list,
+					todo:""
+				},
+				methods:{
+					addTodo(ev){//添加任务
+						//向list中添加一项任务
+						
+						//时间处理函数中的this指向的是当前这个根实例
+//						if(ev.keyCode === 13){
+//							this.lis.push({
+//								title:ev.target.value
+//							});
+//						}或者下面的这种方法,但是v-on里面会有改变
+						this.lis.push({
+							title:this.todo
+						});	
+						//添加完数据之后，让顶部输入的input变为空
+						this.todo = '';
+					}
+						
+				}
+			})
+		</script>
+	</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				padding: 0;
+				margin: 0;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="app1">
+			
+			<zidingyizujian btn-value="搜索"></zidingyizujian>
+		
+			
+			<zidingyizujian btn-value="查询"></zidingyizujian>
+		</div>
+		
+		
+		
+		
+		<script type="text/javascript" src="vue.js"></script>
+		<script type="text/javascript">
+			
+			Vue.component("zidingyizujian",{
+				data:function(){
+					return {selectShow:false};
+				},
+				props:["btnValue"],
+				template:`<ul>
+							<input type="button" :value="btnValue" @click="selectShow = !selectShow"/>
+							<li v-show="selectShow">1</li>
+							<li>2</li>
+							<li>3</li>
+						</ul>`
+			})
+			
+			
+			
+			new Vue({
+				el:"#app1"
+			})
+
+		</script>
+	</body>
+</html>
