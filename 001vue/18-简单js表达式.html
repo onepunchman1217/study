@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="demo" v-bind:custom="abc">
+			<div v-html="message"></div>
+			<div>{{1+2}}</div>
+			<div>{{true?"yes":"no"}}</div>
+		</div>
+		
+		<script type="text/javascript" src="vue.js"></script>
+		<script type="text/javascript">
+			//数据地址
+			let obj = {
+				message:"<div>hello vue</div>",
+				abc:1
+			}
+			var vm = new Vue({
+				el:'#demo',//挂载点
+				data:obj,//代理数据
+			})
+		</script>
+	</body>
+</html>

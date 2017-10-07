@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="demo">
+			<input type="" name="" id="" value="" v-model="message" />
+			<p>{{message}}</p>
+		</div>
+		
+		<script type="text/javascript" src="vue.js"></script>
+		<script type="text/javascript">
+			//数据地址
+			let data1 = {
+				message:"hello vue"
+			}
+			var vm = new Vue({
+				el:'#demo',//挂载点
+				data:data1//代理数据
+			})
+		</script>
+	</body>
+</html>
