@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			.blue{
+				background: skyblue;
+			}
+			.fontSize{
+				font-size: 50px;
+			}
+		</style>
+	</head>
+	<body>
+			
+		<div id="demo">
+			<!--
+				添加class的方式有两种，一种是用v-bind绑定形式，一种是直接添加class的
+				
+				绑定形式的class后面跟你的   class名：和判断true还是false的addclass这个key而不是key值,
+				绑定形式的class和原生添加的class两种方式可以共存
+			-->
+			
+			<p v-bind:class='{blue:addclass}' class="fontSize">
+				balala
+			</p>
+			<input type="text" v-model="message"/>
+			
+		</div>
+		
+		<script type="text/javascript" src="vue.js"></script>
+		<script type="text/javascript">
+				
+			let data1 = {
+				addclass:true//这里如果是true就添加，是false就不添加
+			}
+			var vm = new Vue({
+				el:'#demo',//挂载点
+				data:data1,//引入的数据
+				methods:{
+					clickHandle(){
+						alert('click')
+					}
+				}
+			})
+		</script>
+	</body>
+</html>
